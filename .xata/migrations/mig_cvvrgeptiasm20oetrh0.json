@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cvvrgeptiasm20oetrh0",
+    "operations": [
+      {
+        "add_column": {
+          "table": "Products",
+          "column": {
+            "name": "stock ",
+            "type": "int",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cvvrgeptiasm20oetrh0",
+  "parent": "mig_cvvrg8htiasm20oetrg0",
+  "schema": "public",
+  "startedAt": "2025-04-16T14:01:31.596797Z"
+}

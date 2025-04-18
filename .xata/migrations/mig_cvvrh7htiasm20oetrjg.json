@@ -1,0 +1,30 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cvvrh7htiasm20oetrjg",
+    "operations": [
+      {
+        "add_column": {
+          "table": "Products",
+          "column": {
+            "name": "Discount",
+            "type": "text",
+            "comment": "{\"xata.link\":\"Discounts\"}",
+            "nullable": true,
+            "references": {
+              "name": "Discount_link",
+              "table": "Discounts",
+              "column": "xata_id",
+              "on_delete": "SET NULL"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cvvrh7htiasm20oetrjg",
+  "parent": "mig_cvvrh08uhbl60mimrhs0",
+  "schema": "public",
+  "startedAt": "2025-04-16T14:03:11.356143Z"
+}

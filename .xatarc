@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Sahar-Javadi-s-workspace-pcnfvc.eu-west-1.xata.sh/db/cosmetics-shop",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

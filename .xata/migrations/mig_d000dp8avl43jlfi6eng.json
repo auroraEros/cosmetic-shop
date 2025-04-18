@@ -1,0 +1,18 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d000dp8avl43jlfi6eng",
+    "operations": [
+      {
+        "sql": {
+          "up": "COMMENT ON COLUMN \"products\".\"Discount\" IS '{\"xata.link\":\"discounts\"}'"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d000dp8avl43jlfi6eng",
+  "parent": "mig_d000dogavl43jlfi6emg",
+  "schema": "public",
+  "startedAt": "2025-04-16T19:37:10.393807Z"
+}

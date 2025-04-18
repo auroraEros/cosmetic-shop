@@ -1,0 +1,20 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d000g2ong4kir7cbkne0",
+    "operations": [
+      {
+        "alter_column": {
+          "name": "category",
+          "table": "products",
+          "column": "Category"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d000g2ong4kir7cbkne0",
+  "parent": "mig_d000fo9ebjdi38akkh8g",
+  "schema": "public",
+  "startedAt": "2025-04-16T19:42:03.914487Z"
+}

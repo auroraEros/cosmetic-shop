@@ -1,0 +1,30 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cvvu5p1ebjdi38akkgkg",
+    "operations": [
+      {
+        "add_column": {
+          "table": "Products",
+          "column": {
+            "name": "Brand",
+            "type": "text",
+            "comment": "{\"xata.link\":\"subcategories\"}",
+            "nullable": true,
+            "references": {
+              "name": "Brand_link",
+              "table": "subcategories",
+              "column": "xata_id",
+              "on_delete": "SET NULL"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cvvu5p1ebjdi38akkgkg",
+  "parent": "mig_cvvtoagng4kir7cbkms0",
+  "schema": "public",
+  "startedAt": "2025-04-16T17:03:33.035516Z"
+}

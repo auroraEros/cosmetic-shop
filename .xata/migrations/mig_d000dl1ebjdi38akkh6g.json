@@ -1,0 +1,19 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d000dl1ebjdi38akkh6g",
+    "operations": [
+      {
+        "rename_table": {
+          "to": "products",
+          "from": "Products"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d000dl1ebjdi38akkh6g",
+  "parent": "mig_cvvu5p1ebjdi38akkgkg",
+  "schema": "public",
+  "startedAt": "2025-04-16T19:36:53.374601Z"
+}

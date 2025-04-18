@@ -1,0 +1,19 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d000dogavl43jlfi6emg",
+    "operations": [
+      {
+        "rename_table": {
+          "to": "discounts",
+          "from": "Discounts"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d000dogavl43jlfi6emg",
+  "parent": "mig_d000dl1ebjdi38akkh6g",
+  "schema": "public",
+  "startedAt": "2025-04-16T19:37:07.335097Z"
+}

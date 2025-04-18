@@ -1,0 +1,20 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d000h29ebjdi38akkhdg",
+    "operations": [
+      {
+        "alter_column": {
+          "name": "percentage",
+          "table": "discounts",
+          "column": "Percentage"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d000h29ebjdi38akkhdg",
+  "parent": "mig_d000gv1ebjdi38akkhcg",
+  "schema": "public",
+  "startedAt": "2025-04-16T19:44:10.636824Z"
+}

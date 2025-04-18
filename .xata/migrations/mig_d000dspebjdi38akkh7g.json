@@ -1,0 +1,18 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d000dspebjdi38akkh7g",
+    "operations": [
+      {
+        "sql": {
+          "up": "COMMENT ON COLUMN \"products\".\"Category\" IS '{\"xata.link\":\"categories\"}';COMMENT ON COLUMN \"subcategories\".\"Category\" IS '{\"xata.link\":\"categories\"}'"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d000dspebjdi38akkh7g",
+  "parent": "mig_d000ds0avl43jlfi6eog",
+  "schema": "public",
+  "startedAt": "2025-04-16T19:37:24.549994Z"
+}

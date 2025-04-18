@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cvvr8009ptsq84d1gbrg",
+    "operations": [
+      {
+        "add_column": {
+          "table": "Discounts",
+          "column": {
+            "name": "Code",
+            "type": "text",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cvvr8009ptsq84d1gbrg",
+  "parent": "mig_cvvr7p89ptsq84d1gbqg",
+  "schema": "public",
+  "startedAt": "2025-04-16T13:43:28.956693Z"
+}

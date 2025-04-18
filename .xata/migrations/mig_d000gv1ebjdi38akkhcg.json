@@ -1,0 +1,20 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d000gv1ebjdi38akkhcg",
+    "operations": [
+      {
+        "alter_column": {
+          "name": "expiresAt",
+          "table": "discounts",
+          "column": "ExpiresAt"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d000gv1ebjdi38akkhcg",
+  "parent": "mig_d000grgng4kir7cbkng0",
+  "schema": "public",
+  "startedAt": "2025-04-16T19:43:57.506594Z"
+}
