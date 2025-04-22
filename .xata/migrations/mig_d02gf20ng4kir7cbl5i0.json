@@ -1,0 +1,20 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d02gf20ng4kir7cbl5i0",
+    "operations": [
+      {
+        "alter_column": {
+          "name": "slug",
+          "table": "brands",
+          "column": "slug "
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d02gf20ng4kir7cbl5i0",
+  "parent": "mig_d02g7o0avl43jlfi6rsg",
+  "schema": "public",
+  "startedAt": "2025-04-20T14:41:13.959473Z"
+}

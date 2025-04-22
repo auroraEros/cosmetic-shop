@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d016hj8avl43jlfi6lsg",
+    "operations": [
+      {
+        "add_column": {
+          "table": "orders",
+          "column": {
+            "name": "subtotal",
+            "type": "float",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d016hj8avl43jlfi6lsg",
+  "parent": "mig_d016hdoavl43jlfi6lrg",
+  "schema": "public",
+  "startedAt": "2025-04-18T14:59:26.695892Z"
+}

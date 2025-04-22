@@ -1,0 +1,20 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d020fehebjdi38akkufg",
+    "operations": [
+      {
+        "alter_column": {
+          "name": "stock",
+          "table": "products",
+          "column": "stock "
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d020fehebjdi38akkufg",
+  "parent": "mig_d018510ng4kir7cbku2g",
+  "schema": "public",
+  "startedAt": "2025-04-19T20:29:46.489651Z"
+}

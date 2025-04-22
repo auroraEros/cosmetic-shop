@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d015ueong4kir7cbkt4g",
+    "operations": [
+      {
+        "add_column": {
+          "table": "customers",
+          "column": {
+            "name": "address",
+            "type": "text",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d015ueong4kir7cbkt4g",
+  "parent": "mig_d015ua1ebjdi38akkoq0",
+  "schema": "public",
+  "startedAt": "2025-04-18T14:18:36.831966Z"
+}

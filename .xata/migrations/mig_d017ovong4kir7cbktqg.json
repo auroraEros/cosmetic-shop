@@ -1,0 +1,19 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d017ovong4kir7cbktqg",
+    "operations": [
+      {
+        "drop_column": {
+          "table": "orders",
+          "column": "discount"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d017ovong4kir7cbktqg",
+  "parent": "mig_d017of8avl43jlfi6m3g",
+  "schema": "public",
+  "startedAt": "2025-04-18T16:23:27.77293Z"
+}

@@ -1,0 +1,25 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d0184igng4kir7cbktu0",
+    "operations": [
+      {
+        "add_column": {
+          "table": "discounts",
+          "column": {
+            "name": "isActive",
+            "type": "bool",
+            "comment": "",
+            "default": "'true'",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d0184igng4kir7cbktu0",
+  "parent": "mig_d0184d8ng4kir7cbktt0",
+  "schema": "public",
+  "startedAt": "2025-04-18T16:48:11.328596Z"
+}

@@ -1,13 +1,27 @@
-import { getXataClient } from "@/xata";
+import { BrandsSection } from "@/components/BrandsSection";
+import CategorySection from "@/components/CategorySection";
+import HeroSection from "@/components/HeroSection";
+import PopularProductsSection from "@/components/PopularProductsSection";
+import TestimonialSection from "@/components/TestimonialSection";
+
 
 async function Page() {
-  const xata = getXataClient();
-  const products = await xata.db.products.getAll();
-  console.log(products);
-
   return (
-    <div>
-      <div className="mb-4">محصولات</div>
+    <div className="container mx-auto">
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Category Section */}
+      <CategorySection />
+
+      {/* Popular products Section */}
+      <PopularProductsSection />
+
+      {/* Brands Section */}
+      <BrandsSection />
+
+      {/* Testimonials Section */}
+      <TestimonialSection />
     </div>
   );
 }

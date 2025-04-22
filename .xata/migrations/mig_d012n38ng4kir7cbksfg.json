@@ -1,0 +1,19 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d012n38ng4kir7cbksfg",
+    "operations": [
+      {
+        "drop_column": {
+          "table": "products",
+          "column": "brand"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d012n38ng4kir7cbksfg",
+  "parent": "mig_d012lo8avl43jlfi6k7g",
+  "schema": "public",
+  "startedAt": "2025-04-18T10:38:06.175898Z"
+}

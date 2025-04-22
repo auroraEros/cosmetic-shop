@@ -26,6 +26,14 @@ const tables = [
     },
     columns: [
       {
+        name: "brandUrl",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
         name: "name",
         type: "text",
         notNull: false,
@@ -34,7 +42,177 @@ const tables = [
         comment: "",
       },
       {
-        name: "slug ",
+        name: "slug",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "xata_createdat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_id",
+        type: "text",
+        notNull: true,
+        unique: true,
+        defaultValue: "('rec_'::text || (xata_private.xid())::text)",
+        comment: "",
+      },
+      {
+        name: "xata_updatedat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_version",
+        type: "int",
+        notNull: true,
+        unique: false,
+        defaultValue: "0",
+        comment: "",
+      },
+    ],
+  },
+  {
+    name: "cart_items",
+    checkConstraints: {
+      cart_items_xata_id_length_xata_id: {
+        name: "cart_items_xata_id_length_xata_id",
+        columns: ["xata_id"],
+        definition: "CHECK ((length(xata_id) < 256))",
+      },
+    },
+    foreignKeys: {
+      cart_link: {
+        name: "cart_link",
+        columns: ["cart"],
+        referencedTable: "carts",
+        referencedColumns: ["xata_id"],
+        onDelete: "SET NULL",
+      },
+      product_link: {
+        name: "product_link",
+        columns: ["product"],
+        referencedTable: "products",
+        referencedColumns: ["xata_id"],
+        onDelete: "SET NULL",
+      },
+    },
+    primaryKey: [],
+    uniqueConstraints: {
+      _pgroll_new_cart_items_xata_id_key: {
+        name: "_pgroll_new_cart_items_xata_id_key",
+        columns: ["xata_id"],
+      },
+    },
+    columns: [
+      {
+        name: "cart",
+        type: "link",
+        link: { table: "carts" },
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: '{"xata.link":"carts"}',
+      },
+      {
+        name: "product",
+        type: "link",
+        link: { table: "products" },
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: '{"xata.link":"products"}',
+      },
+      {
+        name: "quantity",
+        type: "int",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "xata_createdat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_id",
+        type: "text",
+        notNull: true,
+        unique: true,
+        defaultValue: "('rec_'::text || (xata_private.xid())::text)",
+        comment: "",
+      },
+      {
+        name: "xata_updatedat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_version",
+        type: "int",
+        notNull: true,
+        unique: false,
+        defaultValue: "0",
+        comment: "",
+      },
+    ],
+  },
+  {
+    name: "carts",
+    checkConstraints: {
+      carts_xata_id_length_xata_id: {
+        name: "carts_xata_id_length_xata_id",
+        columns: ["xata_id"],
+        definition: "CHECK ((length(xata_id) < 256))",
+      },
+    },
+    foreignKeys: {
+      customer_link: {
+        name: "customer_link",
+        columns: ["customer"],
+        referencedTable: "customers",
+        referencedColumns: ["xata_id"],
+        onDelete: "SET NULL",
+      },
+    },
+    primaryKey: [],
+    uniqueConstraints: {
+      _pgroll_new_carts_xata_id_key: {
+        name: "_pgroll_new_carts_xata_id_key",
+        columns: ["xata_id"],
+      },
+    },
+    columns: [
+      {
+        name: "customer",
+        type: "link",
+        link: { table: "customers" },
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: '{"xata.link":"customers"}',
+      },
+      {
+        name: "status",
         type: "text",
         notNull: false,
         unique: false,
@@ -144,6 +322,90 @@ const tables = [
     ],
   },
   {
+    name: "customers",
+    checkConstraints: {
+      customers_xata_id_length_xata_id: {
+        name: "customers_xata_id_length_xata_id",
+        columns: ["xata_id"],
+        definition: "CHECK ((length(xata_id) < 256))",
+      },
+    },
+    foreignKeys: {},
+    primaryKey: [],
+    uniqueConstraints: {
+      _pgroll_new_customers_xata_id_key: {
+        name: "_pgroll_new_customers_xata_id_key",
+        columns: ["xata_id"],
+      },
+    },
+    columns: [
+      {
+        name: "address",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "email",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "name",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "phone",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "xata_createdat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_id",
+        type: "text",
+        notNull: true,
+        unique: true,
+        defaultValue: "('rec_'::text || (xata_private.xid())::text)",
+        comment: "",
+      },
+      {
+        name: "xata_updatedat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_version",
+        type: "int",
+        notNull: true,
+        unique: false,
+        defaultValue: "0",
+        comment: "",
+      },
+    ],
+  },
+  {
     name: "discounts",
     checkConstraints: {
       Discounts_xata_id_length_xata_id: {
@@ -159,13 +421,17 @@ const tables = [
         name: "_pgroll_new_Discounts_xata_id_key",
         columns: ["xata_id"],
       },
+      discounts_code_unique: {
+        name: "discounts_code_unique",
+        columns: ["code"],
+      },
     },
     columns: [
       {
         name: "code",
         type: "text",
         notNull: false,
-        unique: false,
+        unique: true,
         defaultValue: null,
         comment: "",
       },
@@ -178,8 +444,157 @@ const tables = [
         comment: "",
       },
       {
+        name: "isActive",
+        type: "bool",
+        notNull: false,
+        unique: false,
+        defaultValue: "true",
+        comment: "",
+      },
+      {
+        name: "minOrderAmount",
+        type: "float",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
         name: "percentage",
         type: "int",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "xata_createdat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_id",
+        type: "text",
+        notNull: true,
+        unique: true,
+        defaultValue: "('rec_'::text || (xata_private.xid())::text)",
+        comment: "",
+      },
+      {
+        name: "xata_updatedat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_version",
+        type: "int",
+        notNull: true,
+        unique: false,
+        defaultValue: "0",
+        comment: "",
+      },
+    ],
+  },
+  {
+    name: "orders",
+    checkConstraints: {
+      orders_xata_id_length_xata_id: {
+        name: "orders_xata_id_length_xata_id",
+        columns: ["xata_id"],
+        definition: "CHECK ((length(xata_id) < 256))",
+      },
+    },
+    foreignKeys: {
+      customer_link: {
+        name: "customer_link",
+        columns: ["customer"],
+        referencedTable: "customers",
+        referencedColumns: ["xata_id"],
+        onDelete: "SET NULL",
+      },
+      discount_link: {
+        name: "discount_link",
+        columns: ["discount"],
+        referencedTable: "discounts",
+        referencedColumns: ["xata_id"],
+        onDelete: "SET NULL",
+      },
+    },
+    primaryKey: [],
+    uniqueConstraints: {
+      _pgroll_new_orders_xata_id_key: {
+        name: "_pgroll_new_orders_xata_id_key",
+        columns: ["xata_id"],
+      },
+    },
+    columns: [
+      {
+        name: "customer",
+        type: "link",
+        link: { table: "customers" },
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: '{"xata.link":"customers"}',
+      },
+      {
+        name: "discount",
+        type: "link",
+        link: { table: "discounts" },
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: '{"xata.link":"discounts"}',
+      },
+      {
+        name: "discountAmount",
+        type: "float",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "items",
+        type: "json",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "payment_status",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "status",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "subtotal",
+        type: "float",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "total",
+        type: "float",
         notNull: false,
         unique: false,
         defaultValue: null,
@@ -229,13 +644,6 @@ const tables = [
       },
     },
     foreignKeys: {
-      Discount_link: {
-        name: "Discount_link",
-        columns: ["discount"],
-        referencedTable: "discounts",
-        referencedColumns: ["xata_id"],
-        onDelete: "SET NULL",
-      },
       brand_link: {
         name: "brand_link",
         columns: ["brand"],
@@ -252,7 +660,7 @@ const tables = [
       },
       "subcategory _link": {
         name: "subcategory _link",
-        columns: ["subcategory "],
+        columns: ["subcategory"],
         referencedTable: "subcategories",
         referencedColumns: ["xata_id"],
         onDelete: "SET NULL",
@@ -266,6 +674,14 @@ const tables = [
       },
     },
     columns: [
+      {
+        name: "basePrice",
+        type: "float",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
       {
         name: "brand",
         type: "link",
@@ -285,21 +701,12 @@ const tables = [
         comment: '{"xata.link":"categories"}',
       },
       {
-        name: "description ",
+        name: "description",
         type: "text",
         notNull: false,
         unique: false,
         defaultValue: null,
         comment: "",
-      },
-      {
-        name: "discount",
-        type: "link",
-        link: { table: "discounts" },
-        notNull: false,
-        unique: false,
-        defaultValue: null,
-        comment: '{"xata.link":"discounts"}',
       },
       {
         name: "imageUrl",
@@ -310,15 +717,7 @@ const tables = [
         comment: "",
       },
       {
-        name: "price",
-        type: "float",
-        notNull: false,
-        unique: false,
-        defaultValue: null,
-        comment: "",
-      },
-      {
-        name: "stock ",
+        name: "stock",
         type: "int",
         notNull: false,
         unique: false,
@@ -326,7 +725,7 @@ const tables = [
         comment: "",
       },
       {
-        name: "subcategory ",
+        name: "subcategory",
         type: "link",
         link: { table: "subcategories" },
         notNull: false,
@@ -461,6 +860,131 @@ const tables = [
       },
     ],
   },
+  {
+    name: "testimonials",
+    checkConstraints: {
+      testimonials_xata_id_length_xata_id: {
+        name: "testimonials_xata_id_length_xata_id",
+        columns: ["xata_id"],
+        definition: "CHECK ((length(xata_id) < 256))",
+      },
+    },
+    foreignKeys: {
+      product_link: {
+        name: "product_link",
+        columns: ["product-id"],
+        referencedTable: "products",
+        referencedColumns: ["xata_id"],
+        onDelete: "SET NULL",
+      },
+    },
+    primaryKey: [],
+    uniqueConstraints: {
+      _pgroll_new_testimonials_xata_id_key: {
+        name: "_pgroll_new_testimonials_xata_id_key",
+        columns: ["xata_id"],
+      },
+    },
+    columns: [
+      {
+        name: "avatar_url",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "comment",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "date",
+        type: "datetime",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "is_featured",
+        type: "bool",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "name",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "product-id",
+        type: "link",
+        link: { table: "products" },
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: '{"xata.link":"products"}',
+      },
+      {
+        name: "rating",
+        type: "int",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "role",
+        type: "text",
+        notNull: false,
+        unique: false,
+        defaultValue: null,
+        comment: "",
+      },
+      {
+        name: "xata_createdat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_id",
+        type: "text",
+        notNull: true,
+        unique: true,
+        defaultValue: "('rec_'::text || (xata_private.xid())::text)",
+        comment: "",
+      },
+      {
+        name: "xata_updatedat",
+        type: "datetime",
+        notNull: true,
+        unique: false,
+        defaultValue: "now()",
+        comment: "",
+      },
+      {
+        name: "xata_version",
+        type: "int",
+        notNull: true,
+        unique: false,
+        defaultValue: "0",
+        comment: "",
+      },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -469,11 +993,23 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type Brands = InferredTypes["brands"];
 export type BrandsRecord = Brands & XataRecord;
 
+export type CartItems = InferredTypes["cart_items"];
+export type CartItemsRecord = CartItems & XataRecord;
+
+export type Carts = InferredTypes["carts"];
+export type CartsRecord = Carts & XataRecord;
+
 export type Categories = InferredTypes["categories"];
 export type CategoriesRecord = Categories & XataRecord;
 
+export type Customers = InferredTypes["customers"];
+export type CustomersRecord = Customers & XataRecord;
+
 export type Discounts = InferredTypes["discounts"];
 export type DiscountsRecord = Discounts & XataRecord;
+
+export type Orders = InferredTypes["orders"];
+export type OrdersRecord = Orders & XataRecord;
 
 export type Products = InferredTypes["products"];
 export type ProductsRecord = Products & XataRecord;
@@ -481,12 +1017,20 @@ export type ProductsRecord = Products & XataRecord;
 export type Subcategories = InferredTypes["subcategories"];
 export type SubcategoriesRecord = Subcategories & XataRecord;
 
+export type Testimonials = InferredTypes["testimonials"];
+export type TestimonialsRecord = Testimonials & XataRecord;
+
 export type DatabaseSchema = {
   brands: BrandsRecord;
+  cart_items: CartItemsRecord;
+  carts: CartsRecord;
   categories: CategoriesRecord;
+  customers: CustomersRecord;
   discounts: DiscountsRecord;
+  orders: OrdersRecord;
   products: ProductsRecord;
   subcategories: SubcategoriesRecord;
+  testimonials: TestimonialsRecord;
 };
 
 const DatabaseClient = buildClient();

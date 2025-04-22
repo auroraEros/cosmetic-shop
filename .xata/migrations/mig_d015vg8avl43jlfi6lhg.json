@@ -1,0 +1,30 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d015vg8avl43jlfi6lhg",
+    "operations": [
+      {
+        "add_column": {
+          "table": "orders",
+          "column": {
+            "name": "customer",
+            "type": "text",
+            "comment": "{\"xata.link\":\"customers\"}",
+            "nullable": true,
+            "references": {
+              "name": "customer_link",
+              "table": "customers",
+              "column": "xata_id",
+              "on_delete": "SET NULL"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d015vg8avl43jlfi6lhg",
+  "parent": "mig_d015va9ebjdi38akkos0",
+  "schema": "public",
+  "startedAt": "2025-04-18T14:20:50.610228Z"
+}

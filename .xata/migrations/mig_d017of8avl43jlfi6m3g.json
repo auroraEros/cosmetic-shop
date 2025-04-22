@@ -1,0 +1,20 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d017of8avl43jlfi6m3g",
+    "operations": [
+      {
+        "alter_column": {
+          "name": "basePrice",
+          "table": "products",
+          "column": "price"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d017of8avl43jlfi6m3g",
+  "parent": "mig_d017o1pebjdi38akkph0",
+  "schema": "public",
+  "startedAt": "2025-04-18T16:22:22.427076Z"
+}

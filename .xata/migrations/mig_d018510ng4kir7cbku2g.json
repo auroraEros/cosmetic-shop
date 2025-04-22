@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d018510ng4kir7cbku2g",
+    "operations": [
+      {
+        "add_column": {
+          "table": "orders",
+          "column": {
+            "name": "discountAmount",
+            "type": "float",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d018510ng4kir7cbku2g",
+  "parent": "mig_d0184lgavl43jlfi6m60",
+  "schema": "public",
+  "startedAt": "2025-04-18T16:49:09.661328Z"
+}

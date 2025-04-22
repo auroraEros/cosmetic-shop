@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d017npoavl43jlfi6m10",
+    "operations": [
+      {
+        "add_column": {
+          "table": "discounts",
+          "column": {
+            "name": "minOrder",
+            "type": "float",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d017npoavl43jlfi6m10",
+  "parent": "mig_d017ab8ng4kir7cbktlg",
+  "schema": "public",
+  "startedAt": "2025-04-18T16:20:55.901479Z"
+}

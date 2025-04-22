@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d012ll0avl43jlfi6k6g",
+    "operations": [
+      {
+        "add_column": {
+          "table": "brands",
+          "column": {
+            "name": "logo",
+            "type": "text",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d012ll0avl43jlfi6k6g",
+  "parent": "mig_d012lg8ng4kir7cbksd0",
+  "schema": "public",
+  "startedAt": "2025-04-18T10:35:01.147436Z"
+}

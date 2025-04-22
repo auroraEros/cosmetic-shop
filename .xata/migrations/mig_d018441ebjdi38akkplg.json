@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d018441ebjdi38akkplg",
+    "operations": [
+      {
+        "add_column": {
+          "table": "discounts",
+          "column": {
+            "name": "isActive",
+            "type": "bool",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d018441ebjdi38akkplg",
+  "parent": "mig_d0183u1ebjdi38akkpkg",
+  "schema": "public",
+  "startedAt": "2025-04-18T16:47:13.02013Z"
+}

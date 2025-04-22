@@ -1,0 +1,24 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d02u0d8avl43jlfi6tag",
+    "operations": [
+      {
+        "add_column": {
+          "table": "testimonials",
+          "column": {
+            "name": "role",
+            "type": "text",
+            "comment": "",
+            "nullable": true
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d02u0d8avl43jlfi6tag",
+  "parent": "mig_d02u061ebjdi38akl3h0",
+  "schema": "public",
+  "startedAt": "2025-04-21T06:05:42.285073Z"
+}

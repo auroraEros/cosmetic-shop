@@ -1,0 +1,20 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_d0183u1ebjdi38akkpkg",
+    "operations": [
+      {
+        "alter_column": {
+          "name": "minOrderAmount",
+          "table": "discounts",
+          "column": "minOrder"
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_d0183u1ebjdi38akkpkg",
+  "parent": "mig_d017p7ong4kir7cbktrg",
+  "schema": "public",
+  "startedAt": "2025-04-18T16:46:48.911192Z"
+}

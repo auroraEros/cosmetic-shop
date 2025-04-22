@@ -1,0 +1,1 @@
+export const CAROUSEL_THRESHOLD = 5;
